@@ -3,16 +3,17 @@ use strict;
 use warnings;
 use POSIX;
 
-##
-##Input: It takes in input the name of a protein with extension .pdb
-##It reads the corresponding PDB file, extracts from it the coordinates of the C_alpha atoms
-##and creates three arrays x, y and z with such coordinates.
-##It takes in the coordinates, and calls a subroutine that computes the centroid of the atoms
-##It takes in the coordinates, centroid position, and calls a subroutine that computes the distance of
-##every C_alpha atom of the protein from its centroid
-##It takes in the distances, and calls a subroutine that prints the histogram of the distances of the
-##atoms from the centroid.
-##Usage: perl Centroid.pl protein_name.pdb
+#######################################################################################################################
+##Input: It takes in input the name of a protein with extension .pdb						     ##
+##1.It reads the corresponding PDB file, extracts from it the coordinates of the C_alpha atoms			     ##
+##and creates three arrays x, y and z with such coordinates.			   				     ##
+##2.It takes in the coordinates, and calls a subroutine that computes the centroid of the atoms			     ##
+##3.It takes in the coordinates, centroid position, and calls a subroutine that computes the distance of	     ##
+##every C_alpha atom of the protein from its centroid							             ##
+##4.It takes in the distances, and calls a subroutine that prints the histogram of the distances of the		     ##
+##atoms from the centroid.											     ##
+##Usage: perl Centroid.pl protein_name.pdb									     ##	
+#######################################################################################################################
 
 sub centroid {
 my($x_ref,$y_ref,$z_ref)=@_;#passing reference of x,y,z coordinates
